@@ -1,0 +1,3 @@
+class GroupMembership < ApplicationRecord
+	belongs_to :group
+end
