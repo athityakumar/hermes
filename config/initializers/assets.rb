@@ -21,6 +21,6 @@ Rails.application.config.assets.paths << Rails.root.join('vendor', 'assets', 'ja
 Rails.application.config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
 Rails.application.config.assets.precompile << 'material-design-iconic-font.min.css'
 
-%w[session traveller].each do |scaffold|
+%w[session traveller groups/posts places travellers].each do |scaffold|
   Rails.application.config.assets.precompile += ["#{scaffold}.css", "#{scaffold}.js"]
 end

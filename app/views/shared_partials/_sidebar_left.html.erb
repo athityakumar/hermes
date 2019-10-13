@@ -1,0 +1,78 @@
+    <section>
+        <!-- Left Sidebar -->
+        <aside id="leftsidebar" class="sidebar">
+            <!-- User Info -->
+            <div class="user-info">
+                <div class="image">
+                    <img src="<%= user.image %>" width="48" height="48" alt="User" />
+                </div>
+                <div class="info-container">
+                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= user.name %></div>
+                    <div class="email"><%= user.email %></div>
+                </div>
+            </div>
+            <!-- #User Info -->
+            <!-- Menu -->
+            <div class="menu">
+                <ul class="list">
+                    <li class="header">MAIN NAVIGATION</li>
+                    <li>
+                        <a href="/places">
+                            <i class="material-icons">home</i>
+                            <span>Places</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/travellers/<%= user.id %>">
+                            <i class="material-icons">layers</i>
+                            <span>My profile</span>
+                        </a>
+                    </li>
+<!--                     <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">widgets</i>
+                            <span>Widgets</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="javascript:void(0);" class="menu-toggle">
+                                    <span>Cards</span>
+                                </a>
+                                <ul class="ml-menu">
+                                    <li>
+                                        <a href="../../pages/widgets/cards/basic.html">Basic</a>
+                                    </li>
+                                    <li>
+                                        <a href="../../pages/widgets/cards/colored.html">Colored</a>
+                                    </li>
+                                    <li>
+                                        <a href="../../pages/widgets/cards/no-header.html">No Header</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </li>
+ -->                    <li>
+          <a href="/sign_out">
+              <i class="material-icons">input</i>
+              <span>Sign out</span>
+          </a>
+      </li>
+                    <li class="header">GROUPS</li>
+                    <% user.active_groups.each do |group| %>
+
+                        <li>
+                            <a href="/groups/<%= group.id %>/posts">
+                                <i class="material-icons">home</i>
+                                <span><%= group.name %></span>
+                            </a>
+                        </li>
+                    <% end %>
+
+                </ul>
+            </div>
+            <!-- #Menu -->
+        </aside>
+        <!-- #END# Left Sidebar -->
+    </section>    

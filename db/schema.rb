@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2019_10_12_124738) do
     t.string "contact_number"
     t.decimal "average_rating", precision: 3, scale: 2, default: "0.0"
     t.integer "number_of_ratings", default: 0
+    t.integer "group_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

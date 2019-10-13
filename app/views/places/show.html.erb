@@ -1,0 +1,70 @@
+<body class="theme-red">
+
+  <%= render 'shared_partials/loader.html.erb' %>
+  <%= render 'shared_partials/header.html.erb' %>
+
+  <section>
+    <%= render 'shared_partials/sidebar_left.html.erb', user: @current_traveller ? @current_traveller : @current_staff %>
+  </section>
+
+
+
+
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="block-header">
+
+            </div>
+            <!-- Basic Example -->
+            <section class="content">
+<div class ="ib">
+                <div class="container-fluid">
+                    <div class="row clearfix">
+                        <div class="col-xs-15 col-sm-7">
+                            <div class="card profile-card">
+                                <div class="profile-body">
+                                    <div class="image-area" style="width: 100%; height: 100%">
+                                        <!-- <img src="../../images/user-lg.jpg" alt="AdminBSB - Profile Image" /> -->
+<script type="text/javascript" charset="utf-8" async src="<%= @place.map_iframe %>"></script>
+
+                      <div class="content-area">
+                                        <h3><%= @place.name %></h3>
+                                    </div>
+                                </div>
+                                <div class="profile-footer">
+                                    <ul>
+                                        <li>
+                                            <span>Address:</span>
+                                            <span>1234567890</span>
+
+                                        </li>
+                                        <li>
+                                            <span>Rating:</span>
+                                            <span>4.3</span>
+                                        </li>
+
+                                    </ul>
+
+
+                                    <% if @current_traveller && @current_traveller.can_check_into_place?(@place) || @current_staff && @current_staff.can_check_into_place?(@place) %>
+	                                    <a class="btn btn-primary btn-lg waves-effect btn-block" href="/places/<%= @place.id %>/check_in">Check-in</a>
+    								<% else %>
+	                                    <a class="btn btn-primary btn-lg waves-effect btn-block" href="/places/<%= @place.id %>/check_out">Check-out</a>
+									<% end %>    								
+                                </div>
+
+                            </div>
+                          </div>
+            <!-- #END# Basic Example -->
+            <!-- Markers -->
+
+            <!-- #END# Markers -->
+            <!-- Polyline -->
+
+            <!-- #END# Polyline -->
+        </div>
+
+
+    </section>
+</body>

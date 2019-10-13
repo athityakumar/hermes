@@ -7,6 +7,7 @@ class CreatePlaces < ActiveRecord::Migration[5.2]
       t.string :contact_number
       t.decimal :average_rating, precision: 3, scale: 2, default: 0.00
       t.integer :number_of_ratings, default: 0
+      t.integer :group_id
       t.timestamps
     end
   end

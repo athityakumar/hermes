@@ -1,0 +1,2 @@
+module Groups::PostsHelper
+end

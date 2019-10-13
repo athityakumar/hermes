@@ -4,13 +4,19 @@ Rails.application.routes.draw do
   namespace :travellers do
   	scope "/:travellers_id" do
 	  	get '/', action: 'show'
-	  	patch '/', action: 'update'
 	 end
   end
 
   namespace :places do
+    get '/', action: 'show_all'
+
   	scope "/:place_id" do
+      get '/', action: 'show'
+      get '/check_in', action: 'check_in'
+      get '/check_out', action: 'check_out'
+
   		namespace :staffs do
+        get '/', action: 'show'
   		end
   	end
   end
@@ -18,7 +24,12 @@ Rails.application.routes.draw do
   namespace :groups do
   	scope "/:group_id" do
   		namespace :posts do
+        post '/', action: 'new'
+        get '/', action: 'show'
+
   			scope "/:post_id" do
+          get '/', action: 'show_comments'
+          post '/', action: 'new_comment'
   			end
   		end
   	end
@@ -31,4 +42,7 @@ Rails.application.routes.draw do
   post '/sign_up', to: 'session#sign_up'
   get '/sign_in', to: 'session#sign_in'
   post '/sign_in', to: 'session#sign_in'
+  get '/sign_out', to: 'session#sign_out'
+  get '/staff_sign_in', to: 'session#staff_sign_in'
+  post '/staff_sign_in', to: 'session#staff_sign_in'
 end
